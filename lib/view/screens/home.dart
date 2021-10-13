@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'MessageLists.dart';
+import '../components/MessageLists.dart';
 
 class Home extends StatelessWidget {
   @override

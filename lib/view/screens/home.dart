@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../components/MessageLists.dart';
+import '../components/post_lists.dart';
 
 class Home extends StatelessWidget {
   static const String id = 'home_id';
@@ -16,7 +16,7 @@ class Home extends StatelessWidget {
           Expanded(
             child: Container(
               padding: EdgeInsets.all(5.0),
-              child: MessageLists(),
+              child: PostLists(),
             ),
           )
         ],

@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Messages'), automaticallyImplyLeading: false),
+      appBar: AppBar(title: Text('Posts'), automaticallyImplyLeading: false),
       backgroundColor: Colors.white,
       body: Column(
         children: [

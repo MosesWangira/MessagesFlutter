@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:messages_flutter/model/message_data.dart';
 import 'package:messages_flutter/view/screens/home.dart';
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApplication());
 
@@ -10,9 +12,12 @@ class MyApplication extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Home(),
+    return ChangeNotifierProvider<MessageData>(
+      create: (context) => MessageData(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Home(),
+      ),
     );
   }
 }

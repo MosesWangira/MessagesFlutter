@@ -7,9 +7,9 @@ import 'message_model.dart';
 
 class MessageData extends ChangeNotifier{
   MessageModel post = MessageModel();
-  List<Message> _messages = [];
+  List<dynamic> _messages = [];
 
-  UnmodifiableListView<Message> get messages {
+  UnmodifiableListView<dynamic> get messages {
     return UnmodifiableListView(_messages);
   }
 
@@ -19,6 +19,7 @@ class MessageData extends ChangeNotifier{
 
   void getMessages() async {
     _messages = await post.getMessages();
+    print(_messages);
     notifyListeners();
   }
 }

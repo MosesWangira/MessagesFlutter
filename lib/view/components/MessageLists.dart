@@ -11,7 +11,12 @@ class MessageLists extends StatelessWidget {
         itemBuilder: (context, index) {
           final messageList = messageData.messages[index];
           //construct single post item here
-          return MessageItem(messageList);
+          return MessageItem(
+            id: messageList['id'].toString(),
+            userId: messageList['userId'].toString(),
+            title: messageList['title'],
+            body: messageList['body'],
+          );
         },
         itemCount: messageData.postCount,
       );

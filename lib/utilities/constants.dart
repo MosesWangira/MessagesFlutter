@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const baseUrl = 'https://jsonplaceholder.typicode.com';
 
 const kTempTextStyle = TextStyle(
   fontFamily: 'Spartan MB',

@@ -18,6 +18,7 @@ class MessageData extends ChangeNotifier{
 
   Future<dynamic> getMessages() async {
     _messages = await post.getMessages();
+    print('${_messages.toString()}');
     notifyListeners();
   }
 }

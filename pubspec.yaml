@@ -45,16 +45,16 @@ flutter_native_splash:
  web: true
 
  color: "FF725E"
- image: assets/spas.png
+ image: assets/splash.png
 
  android_gravity: center
  ios_content_mode: center
  web_image_mode: center
 
 # dark theme
-# color_dark: "FF725E"
+ color_dark: "FF725E"
 # background_image_dark: assets/splash.png
-# image_dark: assets/splash.png
+ image_dark: assets/splash.png
 
  full_screen: true
 # android12: true

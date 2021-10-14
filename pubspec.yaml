@@ -36,6 +36,33 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_native_splash: ^1.2.0
+
+flutter_native_splash:
+
+ android: true
+ ios: true
+ web: true
+
+ color: "FF725E"
+ image: assets/spas.png
+
+ android_gravity: center
+ ios_content_mode: center
+ web_image_mode: center
+
+# dark theme
+# color_dark: "FF725E"
+# background_image_dark: assets/splash.png
+# image_dark: assets/splash.png
+
+ full_screen: true
+# android12: true
+
+#run command
+#flutter pub run flutter_native_splash:create
+#to remove
+#flutter pub run flutter_native_splash:remove
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

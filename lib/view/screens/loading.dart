@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:messages_flutter/model/message_data.dart';
+import 'package:messages_flutter/utilities/colors.dart';
 import 'package:messages_flutter/view/screens/home.dart';
 import 'package:provider/provider.dart';
 
@@ -28,9 +29,10 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: primaryColor,
       body: Center(
         child: SpinKitCircle(
-          color: Colors.lightBlueAccent,
+          color: Colors.white,
           size: 50.0,
         ),
       ),

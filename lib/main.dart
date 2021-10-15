@@ -4,6 +4,7 @@ import 'package:messages_flutter/model/message_data.dart';
 import 'package:messages_flutter/utilities/colors.dart';
 import 'package:messages_flutter/view/screens/home.dart';
 import 'package:messages_flutter/view/screens/loading.dart';
+import 'package:messages_flutter/view/screens/no_internet.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -32,6 +33,7 @@ class MyApplication extends StatelessWidget {
         routes: {
           Loading.id : (context) =>  Loading(),
           Home.id : (context) =>  Home(),
+          NoInternetConnection.id : (context) => NoInternetConnection(),
         },
       ),
     );

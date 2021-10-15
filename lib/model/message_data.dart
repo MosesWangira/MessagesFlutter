@@ -6,6 +6,7 @@ import 'message_model.dart';
 
 class MessageData extends ChangeNotifier{
   MessageModel post = MessageModel();
+
   List<dynamic> _messages = [];
 
   UnmodifiableListView<dynamic> get messages {
@@ -15,6 +16,8 @@ class MessageData extends ChangeNotifier{
   int get postCount {
     return _messages.length;
   }
+
+
 
   Future<dynamic> getMessages() async {
     _messages = await post.getMessages();

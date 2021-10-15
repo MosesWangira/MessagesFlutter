@@ -3,7 +3,7 @@ import 'package:messages_flutter/utilities/constants.dart';
 
 class MessageModel {
   Future<dynamic> getMessages() async {
-    NetworkHelper networkHelper = NetworkHelper(Uri.parse('$baseUrl/posts'));
+    NetworkHelper networkHelper = NetworkHelper(Uri.parse('$baseUrl/posts/posts'));
     return await networkHelper.getData();
   }
 }

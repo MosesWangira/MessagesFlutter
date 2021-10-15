@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 import 'package:messages_flutter/view/screens/no_internet.dart';
 
@@ -23,6 +22,7 @@ class NetworkHelper {
         case 400:
           throw BadRequestException(response.body.toString());
         case 401:
+          //navigate to login screen if app has one
           throw UnauthorisedException(response.body.toString());
         case 403:
           throw UnauthorisedException(response.body.toString());
@@ -34,12 +34,6 @@ class NetworkHelper {
     }on SocketException{
       //show no internet screen if socket connection error
       Navigator.pushNamed(context, NoInternetConnection.id);
-      //kill app if no connection for now
-      // if(Platform.isAndroid){
-      //   SystemNavigator.pop();
-      // }else if (Platform.isIOS){
-      //   exit(0);
-      // }
       return Future.error('No Internet connection 😑');
     }on FormatException {
       return Future.error('Bad response format 👎');

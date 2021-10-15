@@ -14,7 +14,6 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-
   @override
   void initState() {
     super.initState();
@@ -22,7 +21,7 @@ class _LoadingState extends State<Loading> {
   }
 
   void getPosts() async {
-    await Provider.of<MessageData>(context, listen: false).getMessages();
+    await Provider.of<MessageData>(context, listen: false).getMessages(context);
     Navigator.popAndPushNamed(context, Home.id);
   }
 

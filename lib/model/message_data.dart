@@ -17,11 +17,8 @@ class MessageData extends ChangeNotifier{
     return _messages.length;
   }
 
-
-
-  Future<dynamic> getMessages() async {
-    _messages = await post.getMessages();
-    print('${_messages.toString()}');
+  Future<dynamic> getMessages(BuildContext context) async {
+    _messages = await post.getMessages(context);
     notifyListeners();
   }
 }

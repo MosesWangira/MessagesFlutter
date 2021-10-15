@@ -1,8 +1,10 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
+import 'package:messages_flutter/view/screens/no_internet.dart';
 
 import 'custom_exception.dart';
 
@@ -11,7 +13,7 @@ class NetworkHelper {
 
   final Uri url;
 
-  Future getData() async {
+  Future getData(BuildContext context) async {
     try {
       http.Response response = await http.get(url);
 
@@ -23,12 +25,6 @@ class NetworkHelper {
         case 401:
           throw UnauthorisedException(response.body.toString());
         case 403:
-          //kill app if no connection for now
-          if(Platform.isAndroid){
-            SystemNavigator.pop();
-          }else if (Platform.isIOS){
-            exit(0);
-          }
           throw UnauthorisedException(response.body.toString());
         case 500:
         default:
@@ -37,7 +33,16 @@ class NetworkHelper {
       }
     }on SocketException{
       //show no internet screen if socket connection error
+      Navigator.pushNamed(context, NoInternetConnection.id);
+      //kill app if no connection for now
+      // if(Platform.isAndroid){
+      //   SystemNavigator.pop();
+      // }else if (Platform.isIOS){
+      //   exit(0);
+      // }
       return Future.error('No Internet connection 😑');
+    }on FormatException {
+      return Future.error('Bad response format 👎');
     }
     on Exception {
       //other exceptions
